@@ -67,10 +67,10 @@ for (const [mode, theme] of Object.entries(themes)) {
 
   const labels = ["Conversation context", "Agent workflows", "Local observability"];
   const nodes = labels.map((label, index) => {
-    const x = 126 + index * 254;
+    const x = 73 + index * 147;
     return `<circle cx="${x}" cy="22" r="8" fill="${theme.soft}" stroke="${theme.accent}"/><circle cx="${x}" cy="22" r="2.5" fill="${theme.accent}"/>${text(x - (label.length * 3.5), 55, label, 13, theme.muted)}`;
   }).join("");
-  const workflow = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="74" viewBox="0 0 760 74" role="img" aria-labelledby="title"><title id="title">Conversation context, agent workflows, local observability</title><style>@media(prefers-reduced-motion:reduce){.signal{display:none}}</style><path d="M126 22H634" stroke="${theme.border}" fill="none"/><g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">${nodes}</g><circle class="signal" r="3" fill="${theme.accent}"><animateMotion dur="6s" repeatCount="indefinite" path="M126 22H634"/></circle></svg>\n`;
+  const workflow = `<svg xmlns="http://www.w3.org/2000/svg" width="440" height="74" viewBox="0 0 440 74" role="img" aria-labelledby="title"><title id="title">Conversation context, agent workflows, local observability</title><style>@media(prefers-reduced-motion:reduce){.signal{display:none}}</style><path d="M73 22H367" stroke="${theme.border}" fill="none"/><g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">${nodes}</g><circle class="signal" r="3" fill="${theme.accent}"><animateMotion dur="6s" repeatCount="indefinite" path="M73 22H367"/></circle></svg>\n`;
   await writeFile(`assets/workflow-${mode}.svg`, workflow);
 }
 console.log(`Updated public profile assets for ${owner}: ${repos.length} repositories, ${ranked.length} featured languages.`);

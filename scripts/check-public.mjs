@@ -22,5 +22,15 @@ if (name !== "lolipop-1x1" || email !== "59793977+lolipop-1x1@users.noreply.gith
   console.error("公开内容检查失败：Git 提交身份不符合隐私约定。");
   failed = true;
 }
+// 历史提交允许公开账号和自动更新工作流的官方机器人身份。
+const identities = new Set([
+  "lolipop-1x1 <59793977+lolipop-1x1@users.noreply.github.com>",
+  "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
+]);
+const history = execFileSync("git", ["log", "--format=%an <%ae>%n%cn <%ce>"], { encoding: "utf8" }).trim().split("\n");
+if (history.some(identity => !identities.has(identity))) {
+  console.error("公开内容检查失败：历史提交身份不符合隐私约定。");
+  failed = true;
+}
 if (failed) process.exitCode = 1;
 else console.log(`公开内容检查通过：${paths.length} 个文件；Git 使用公开账号与隐私邮箱。`);
