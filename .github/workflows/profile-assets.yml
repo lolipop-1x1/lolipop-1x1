@@ -1,0 +1,49 @@
+name: Refresh profile assets
+
+on:
+  schedule:
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update-stats.mjs'
+      - '.github/workflows/profile-assets.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-assets
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Update public statistics
+        run: npm run update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate contribution trail
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: lolipop-1x1
+          outputs: |
+            assets/contributions-light.svg?palette=github-light&color_snake=%23235ca8&color_dots=%23ebedf0,%23c6ddfa,%238bb7f0,%23578bd2,%23235ca8
+            assets/contributions-dark.svg?palette=github-dark&color_snake=%2379b8ff&color_dots=%23161b22,%231d3555,%23284972,%234c80bd,%2379b8ff
+      - name: Commit refreshed assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git diff --cached --check
+          git commit -m 'chore: refresh public profile assets'
+          git push origin HEAD:main

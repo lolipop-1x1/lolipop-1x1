@@ -1,0 +1,10 @@
+{
+  "name": "lolipop-1x1-profile",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update-stats.mjs",
+    "check:public": "node scripts/check-public.mjs",
+    "check": "node --check scripts/update-stats.mjs && node --check scripts/check-public.mjs && npm run check:public"
+  }
+}
