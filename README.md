@@ -2,9 +2,9 @@
 
 # Hi, I'm lolipop-1x1 👋
 
-**Building tools for better AI-assisted development.**
+**Java backend developer building tools for AI-assisted development.**
 
-构建实用的 AI 开发工具，让上下文更清楚、工作流更顺手。
+Java 后端开发者，也在构建实用的 AI 开发工具，让工作流更顺手。
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/workflow-dark.svg">
@@ -20,6 +20,7 @@
 
 ### 🧑‍💻 About Me
 
+- ☕ I'm a **Java backend developer**.
 - 🛠 I build **AI developer tools and DeepSeek Harness plugins**.
 - 🧵 I care about **conversation context** — picking up a task and understanding what matters.
 - 🔍 I explore **local observability** — seeing which processes touch project files.
@@ -76,6 +77,7 @@ Observes and alerts; it does not block file access or network transmission.
 ### 🛠 Toolbox
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Java-EA2D2E?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/Rust-43536B?style=flat-square&logo=rust&logoColor=white" alt="Rust">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
