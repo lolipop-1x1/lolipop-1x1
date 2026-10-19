@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
 const owner = "lolipop-1x1";
-const featured = ["dsh-recap", "dsh-you-should-know", "CodePerimeter"];
+const featured = ["agent-manor", "dsh-recap", "dsh-you-should-know", "CodePerimeter"];
 const headers = { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
@@ -63,7 +63,7 @@ for (const [mode, theme] of Object.entries(themes)) {
     const y = 98 + Math.floor(index / 2) * 24;
     return `<circle cx="${x + 4}" cy="${y - 4}" r="4" fill="${colors[index]}"/>` + text(x + 15, y, `${name} ${(100 * bytes / total).toFixed(1)}%`, 12);
   }).join("");
-  await writeFile(`assets/languages-${mode}.svg`, card("Languages in featured projects", text(22, 49, "Code bytes across 3 public repositories", 10, theme.muted) + bar + legend));
+  await writeFile(`assets/languages-${mode}.svg`, card("Languages in featured projects", text(22, 49, `Code bytes across ${featured.length} public repositories`, 10, theme.muted) + bar + legend));
 
   const labels = ["Conversation context", "Agent workflows", "Local observability"];
   const nodes = labels.map((label, index) => {

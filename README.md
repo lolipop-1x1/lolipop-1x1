@@ -32,6 +32,19 @@ Java 后端开发者，也在构建实用的 AI 开发工具，让工作流更�
 
 <table>
 <tr>
+<td colspan="2" valign="top">
+
+<h3 align="center"><a href="https://github.com/lolipop-1x1/agent-manor">🏡 AgentManor</a></h3>
+
+<p align="center"><strong>A home for your coding agents.</strong></p>
+
+A local-first workspace for AI coding agents. Search conversations across clients, organize knowledge with sources, replay code activity, track usage, and manage Skills &amp; MCP.
+
+<p align="center"><sub>TypeScript · Local-first · Web + CLI</sub></p>
+
+</td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 <h3 align="center"><a href="https://github.com/lolipop-1x1/dsh-recap">🧵 DSH Recap</a></h3>
@@ -97,13 +110,13 @@ Observes and alerts; it does not block file access or network transmission.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/languages-light.svg">
-  <img src="assets/languages-light.svg" width="420" alt="Language breakdown by code bytes across the three featured public repositories">
+  <img src="assets/languages-light.svg" width="420" alt="Language breakdown by code bytes across the featured public repositories">
 </picture>
 
 <details>
 <summary>About these numbers</summary>
 
-The snapshot refreshes daily from public GitHub data. Original repositories exclude forks; stars are summed over those repositories. Languages measure code bytes across the three featured projects and do not represent proficiency. The contribution animation uses this account's contribution calendar as visible to the workflow token.
+The snapshot refreshes daily from public GitHub data. Original repositories exclude forks; stars are summed over those repositories. Languages measure code bytes across the featured projects and do not represent proficiency. The contribution animation uses this account's contribution calendar as visible to the workflow token.
 
 </details>
 
